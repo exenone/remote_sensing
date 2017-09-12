@@ -1,9 +1,11 @@
 const express=require('express');
 const app=express();
-var MongoClient = require('mongodb').MongoClient;
-var db = "mongodb://localhost:27017/mydb";
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs'); 
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/mydb");
+
+
+
+
 
 
 const http = require('http');
@@ -15,33 +17,36 @@ app.use(express.static('public'));
 app.use(express.static('src/views'));
 
 //-----------------------------------------------------------------------------------------
+app.use("/", (req, res) => {
+  res.sendFile(__dirname + "./src/views/fixture.html");
+ });
 
-app.get('/', function(req,res){
-    res.render('fixture');
-})
- 
-app.post('/insert', function (req, res) {
+ var nameSchema = new mongoose.Schema({
+  firstName: String,
+  lastNameName: String
+ });
 
-MongoClient.connect(db, function(err, db) {
-    if (err) throw err;
-    
-    db.collection('students', function(err, collection) {
-        doc = {
-              "tree" : req.body.tree,
-              "xxx" : req.body.xxx
-        };
-        collection.insert(doc, function() {
-            res.send('Inserted Successfully!');
-            db.close();
-        });
-    });
-});
+ var User = mongoose.model("User", nameSchema);
 
+ app.post("/addname", (req, res) => {
   
-});
-   
+ });
 
-  // --http://www.wesohaex.com/nodejs/insert-data-mongodb-using-nodejs.html-------------------------------------
+
+ app.post("/addname", (req, res) => {
+  var myData = new User(req.body);
+  console.log(req.body);
+  myData.save()
+  .then(item => {
+  res.send("item saved to database");
+  })
+  .catch(err => {
+  res.status(400).send("unable to save to database");
+  });
+ });
+
+
+  // ---------------------------------------
 app.get('/',function(req,res){
     res.send('welcome!');
   
