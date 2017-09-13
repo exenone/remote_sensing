@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    link(type='text/css', rel='stylesheet', href='/site.css')
+    |     
+    title Hello
+  body
+  each User in users
+    h1.trim #{User.firstName}
