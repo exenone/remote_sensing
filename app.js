@@ -9,7 +9,7 @@ var pug = require('pug');
 //var jadebootstrap=require('jade-bootstrap');
 
 
-mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/mydb");
+mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/64_bracket");
 
 
 var http = require('http');
@@ -31,17 +31,17 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
   res.sendFile(__dirname + "./src/views/fixture.html");
  });*/
 
- var nameSchema = new mongoose.Schema({
-  firstName: String,
-  lastNameName: String
+ var bracketSchema = new mongoose.Schema({
+  team_name: String,
+  Score: Number
  });
 
- var User = mongoose.model("User", nameSchema);
+ var User = mongoose.model("User", bracketSchema);
 
  app.post("/addname",urlencodedParser,function(req,res){
    new User({
-    firstName: req.body.firstName,
-    lastNameName: req.body.lastName
+    team_name: req.body.team_name,
+    Score: req.body.score
 
    }).save(function(err,doc){
      if(err)res.json(err)
@@ -53,10 +53,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
  app.get('/view',urlencodedParser, function(req, res){
-	User.find({}, function(err, docs){
+	User.find({Score: "20"}, function(err, docs){
+   
 		if(err) res.json(err);
-  //	else   res.render('results', {users: docs});
-  else   res.render('work', {users: docs});
+ //else   res.render('results', {users: docs});
+   else   res.render('work', {users: docs});
 	});
 });
 
