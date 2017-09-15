@@ -34,11 +34,18 @@ var bracketSchema = new mongoose.Schema({
 
  var User = mongoose.model("User", bracketSchema);
  
- var adminSchema = new mongoose.Schema({
-  inputEmail: String,
-  inputPassword: String
+ 
+var bracketSchema = new mongoose.Schema({
+  Name: String,
+  Email: String,
+  Username: String,
+  password: String,
+  Cpassword: String
  });
- var Admin = mongoose.model("Admin",adminSchema);
+ var Admin =mongoose.model("Admin",bracketSchema);
+
+  /*
+ var Admin = mongoose.model("Admin",adminSchema);*/
 
 //---------------------------variables ends here-----------------------------------------
 
@@ -64,7 +71,9 @@ app.get('/admin',jsonParser,function(req,res,next){
 app.get('/',jsonParser,function(req,res,next){
   res.render('index',{title:'welcome'});
 });
-
+app.get('/newadminsave',jsonParser,function(req,res,next){
+  res.render('newadminsave',{title:'welcome'});
+});
 
 /*app.use('index',jsonParser,function(req,res){
 	User.find({Score: "50"}, function(err, docs){
@@ -101,12 +110,12 @@ app.get('/',jsonParser,function(req,res,next){
    Email: req.body.email,
    Username: req.body.username,
    password: req.body.password,
-   Cpassword: req.body.confirm,
+   Cpassword: req.body.confirm
 
   }).save(function(err,doc){
     if(err)res.json(err)
-     else res.send('You have added a team Successfully!!');
-   //else res.redirect('/view');
+    else res.send('You have added a user Successfully!!');
+  // else res.redirect('/newadminsave');
   });
  
 });

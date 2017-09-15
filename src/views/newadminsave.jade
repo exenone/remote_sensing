@@ -56,7 +56,7 @@ html(lang='en')
                     i.fa.fa-lock.fa-lg(aria-hidden='true')
                   input#confirm.form-control(type='password', name='confirm', placeholder='Confirm your Password')
             .form-group
-              button.btn.btn-primary.btn-lg.btn-block.login-button(type='button',formmethod="get" formaction="/newadminsave") Register
+              button.btn.btn-primary.btn-lg.btn-block.login-button(type='button',formmethod="post" formaction="/newadminsave") Register
             .login-register
               a(href='/admin') Login
     script(type='text/javascript', src='bootstrap/dist/js/bootstrap.js')
