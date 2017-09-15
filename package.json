@@ -1,8 +1,8 @@
 {
   "title": "Thumbnail Gallery",
-  "name": "my_project",
-  "version": "1.0.0",
-  "description": "A one column portfolio template built with Bootstrap",
+  "name": "64_brackets",
+  "version": "1.0.1",
+  "description": "A project for the Lexicon AB Malmö",
   "keywords": [
     "css",
     "sass",
@@ -13,17 +13,17 @@
   ],
   "homepage": "https://startbootstrap.com/template-overviews/thumbnail-gallery",
   "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-thumbnail-gallery/issues",
-    "email": "feedback@startbootstrap.com"
+    "url": "https://github.com/BlackrockDigital/exenone",
+    "email": "seeunuwan@gmx.com"
   },
-  "license": "MIT",
-  "author": "Start Bootstrap",
+  "license": "UNLICENSED",
+  "author": "Nuwan",
   "contributors": [
-    "David Miller (http://davidmiller.io/)"
+    "exenone (http://nuwankumara.com/)"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BlackrockDigital/startbootstrap-thumbnail-gallery.git"
+    "url": "git+https://github.com/exenone/64_brackets.git"
   },
   "dependencies": {
     "body-parser": "^1.18.1",

@@ -1,0 +1,32 @@
+{
+  "name": "64 bracket",
+  "description": "64_bracket",
+  "main": "app.js",
+  "authors": [
+    "Nuwan pushpakumara(https://nuwankumara.com)"
+  ],
+  "license": "ioi",
+  "keywords": [
+    "css",
+    "html",
+    "jade",
+    "middelware",
+    "responsive",
+    "bootstrap",
+    "js",
+    "node"
+  ],
+  "homepage": "https://github.com/exenone/mongo_project",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jade-bootstrap": "^1.1.0"
+  }
+}
