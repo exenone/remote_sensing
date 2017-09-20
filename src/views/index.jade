@@ -3,124 +3,87 @@ html(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    title=title
-    // Bootstrap core CSS
+    meta(name='description', content='64_bracket')
+    meta(name='author', content='Exenone')
+    title Basketball Tournament
+   
     link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
-    // Custom styles for this template
+    //
     link(href='css/thumbnail-gallery.css', rel='stylesheet')
   body
     // Navigation
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       .container
-        a.navbar-brand(href='#') Lexicon Tropy 2107
+        a.navbar-brand(href='/') 
+          b Basketball Tournament 2018!
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarResponsive.collapse.navbar-collapse
           ul.navbar-nav.ml-auto
             li.nav-item.active
-              a.nav-link(href='#')
+              a.nav-link(href='/')
                 | Home
                 span.sr-only (current)
             li.nav-item
-              a.nav-link(href='/view') Fixtures
+              a.nav-link(href='/view') Fixtures/Brackets
             li.nav-item
-              a.nav-link(href='/admin') Admin
+              a.nav-link(href='/about') Ranking System
             li.nav-item
-              a.nav-link(href='contact.html') Contact
+              a.nav-link(href='/admin') Login
     // Page Content
     .container
-     
-       h1.my-4.text-center.text-lg-left Lexicon Tropy 2017
-       .row.text-center.text-lg-left
+      p.
+      h2.my-4.text-center.text-lg-left Group Rankings
+      .row.text-center.text-lg-left
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100(href='/groupa')
+            img.img-fluid.img-thumbnail(src='images/1.jpg', alt='')
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100(href='/groupb')
+            img.img-fluid.img-thumbnail(src='images/2.jpg', alt='')
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100(href='/groupc')
+            img.img-fluid.img-thumbnail(src='images/3.jpg', alt='')
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100(href='/groupd')
+            img.img-fluid.img-thumbnail(src='images/4.jpg', alt='')
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+            li Group A has 16 teams that  they are between ranking 
+                b scores 0 to 40.
+                li So far they are in the beginers level. In this year we have some new teams on this group.
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+              li Group B has 16 teams that  they are between ranking 
+                b scores 40 to 80.
+                li You can say they are the Gladiators. They wont stop fighting. 
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+              li Group C has 16  teams that  they are between ranking 
+                b scores 80 to 120.
+                li The Knights, The Fighters of course they have gained lot after this three four years. now ready to battle for the thropy!
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+              li Group D has 16 teams that  they are between ranking 
+                b scores 120 to 160.
+                li The kings, the Best. Hard battle for the tropy. they are the best on the ranking scores including last year Champions!
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+            img.
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-10
+            img.
+        .col-lg-3.col-md-4.col-xs-6
+          a.d-block.mb-4.h-100
+            img.
         .col-lg-3.col-md-4.col-xs-6
           a.d-block.mb-4.h-100(href='#')
-            h2.r1g1
-              | group#1
-              h2 
-        .col-lg-3.col-md-4.col-xs-6
-          
-          
-          a.d-block.mb-4.h-100(href='#')
-            h2.r1g2
-              | group#2
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r1g3
-              | group#3
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r1g4
-              | group#4
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r2g5
-              | group#5
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r2g6
-              | group#6
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r2g7
-              | group#7
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r2g8
-              | group#8
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r3g9
-              | group#9
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r3g10
-              | group#10
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r3g11
-              | group#11
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r3g12
-              | group#12
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r4g13
-              | group#13
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r4g14
-              | group#14
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r4g15
-              | group#15
-              h2
-        .col-lg-3.col-md-4.col-xs-6
-          a.d-block.mb-4.h-100(href='#')
-            h2.r4g16
-              | group#16
-              h2
+            img.
     // /.container
     // Footer
     footer.py-5.bg-dark
       .container
-        p.m-0.text-center.text-white Copyright © Nuwan 2017
+        p.m-0.text-center.text-white Copyright © Nuwan 2017, Lexicon_Project 2017.09.22
       // /.container
     // Bootstrap core JavaScript
     script(src='vendor/jquery/jquery.min.js')

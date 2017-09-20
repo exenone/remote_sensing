@@ -1,0 +1,26 @@
+
+-each User, i in users
+ -var name= [User.team_name];
+ -var score=[User.Score];
+ -var levelone
+ -var=leveltwo
+ -var=levelthree
+ -var=levelfour
+ -var=levelfive
+ -var=final
+
+ -function levels(score)
+ -if (score>0 && score>160)
+  -return levelone
+ -else if (score>80 && score>160)
+  -return leveltwo
+ -else if (score>120 && score>160)
+  -return levelthree
+ -else if (score>140 && score>160)
+  -return levelfour
+ -else if (score>150 && score>160)
+  -return levelfive  
+ -else if (score>158 && score>160)
+  -return final
+
+p #{i+1}:#{levelone.name}

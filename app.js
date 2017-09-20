@@ -32,7 +32,7 @@ var bracketSchema = new mongoose.Schema({
   Score: Number
  });
 
- var User = mongoose.model("User", bracketSchema);
+ var User = mongoose.model("users", bracketSchema);
  
  
 var bracketSchema = new mongoose.Schema({
@@ -42,8 +42,8 @@ var bracketSchema = new mongoose.Schema({
   password: String,
   Cpassword: String
  });
- var Admin =mongoose.model("Admin",bracketSchema);
-
+ var Admin =mongoose.model("admins",bracketSchema);
+ var Level1 =mongoose.model("Level1",bracketSchema);
   /*
  var Admin = mongoose.model("Admin",adminSchema);*/
 
@@ -74,6 +74,11 @@ app.get('/',jsonParser,function(req,res,next){
 app.get('/newadminsave',jsonParser,function(req,res,next){
   res.render('newadminsave',{title:'welcome'});
 });
+
+app.get('/about',jsonParser,function(req,res,next){
+  res.render('about',{title:'about_brackets'});
+});
+
 
 /*app.use('index',jsonParser,function(req,res){
 	User.find({Score: "50"}, function(err, docs){
@@ -120,16 +125,84 @@ app.get('/newadminsave',jsonParser,function(req,res,next){
  
 });
 
+/*
+app.get('/view',urlencodedParser, function(req, res){
+  User.find({Score:""},function(err, teamArray){
+
+    if(err) res.json(err);
+    if (teamArray<=(0-160)){
+      res.render('try', {users: teamArray})
+    }
+     else if(teamArray<=(80-160 ))  { res.render('try', {users: teamArray});
+    }	});
+});
+*/
 
  app.get('/view',urlencodedParser, function(req, res){
-	User.find({Score: "50"}, function(err, docs){
-   
+  User.find({},
+     function(err, docs){
+
 		if(err) res.json(err);
- //else   res.render('results', {users: docs});
-   else   res.render('work', {users: docs});
+ else   res.render('try', {users: docs});
+   //else   res.render('work', {users: docs});
+	});
+});
+//--------------------ranking system quering----------
+/*group a condition*/
+
+app.get('/groupa',urlencodedParser, function(req, res){
+  User.find({ Score:{$gt: 0,$lt:40}},
+  
+     function(err, docs){
+
+		if(err) res.json(err);
+ else   res.render('groupa', {users: docs,title:"Group_A"});
 	});
 });
 
+/*group b condition*/
+
+
+app.get('/groupb',urlencodedParser, function(req, res){
+  User.find({ Score:{$gt: 40,$lt:80}},
+    
+     function(err, docs){
+
+		if(err) res.json(err);
+ else   res.render('groupb', {users: docs,title:"Group_B"});
+	});
+});
+
+/*group c condition*/
+
+app.get('/groupc',urlencodedParser, function(req, res){
+  User.find({ Score:{$gt: 80,$lt:120}},
+    
+     function(err, docs){
+
+		if(err) res.json(err);
+ else   res.render('groupc', {users: docs,title:"Group_C"});
+	});
+});
+/*group d condition*/
+app.get('/groupd',urlencodedParser, function(req, res){
+  User.find({ Score:{$gt: 120,$lt:160}},
+    
+     function(err, docs){
+
+		if(err) res.json(err);
+ else   res.render('groupd', {users: docs,title:"Group_D"});
+	});
+});
+/*--------copydata------------*/
+/*
+var level1 =mongoose.model("level1",bracketSchema);
+var toArray =
+User.find({ Score:{$gt: 0,$lt:160}}),toArray(function(err, data){
+   level1.insert(doc); 
+});
+*/
+//------------------------------------------------------
 app.post('/newadmin',urlencodedParser, function(req, res,next){
 	
     res.render('newadmin', {});

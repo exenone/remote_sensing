@@ -39,7 +39,10 @@ head
       background-color: white;
       border: 1px solid #000000;
       border-radius: 5px;
+      margin-left: 10px;
+      direction: ltr;
       }
+
       /*------------------round one----------------------------*/
       .da1so2{
       float: left;
@@ -60,9 +63,12 @@ head
       background-color: white;
       border: 1px solid #000000;
       border-radius: 5px;
-      margin-left: 5px;
-      font
+      margin-left:10px
+      direction: ltr;
+     
       }
+
+     
       /*------------------round two----------------------------*/
       .da1so3{
       float: left;
@@ -189,6 +195,39 @@ head
       margin-right: 10px;
       direction: rtl;
       }
+
+      .zr1{
+      float: left;
+      width:  100%;
+      height: 60.5px;
+      background-color: white;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      margin-right: 10px;
+      direction: rtl;
+      }
+
+      .zr2{
+      float: left;
+      width:  100%;
+      height: 60.5px;
+      background-color: white;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      margin-right: 10px;
+      direction: rtl;
+      }
+      .zr3{
+      float: left;
+      width:  100%;
+      height: 60.5px;
+      background-color: white;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      margin-right: 10px;
+      direction: rtl;
+      }
+  
       /*------------------round two----------------------------*/
       .da2so3 {
       float: left;
@@ -260,63 +299,25 @@ head
       }
       /*here ends right side boundry*/
   body
+  a(href='/') back to home page
     .mother
       .da1
         // this is the daughter one of mother
         .da1so1
           .da1so1da1
             // this is the daughter one of son one she has 8 sons
-            .xl 1
-            .xl 2
-            .xl 3
-            .xl 4
-            .xl 5
-            .xl 6
-            .xl 7
-            .xl 8
-            .xl 9
-            .xl 10
-            .xl 11
-            .xl 12
-            .xl 13
-            .xl 14
-            .xl 15
-            .xl 16
-            .xl 17
-            .xl 18
-            .xl 19
-            .xl 20
-            .xl 21
-            .xl 22
-            .xl 23
-            .xl 24
-            .xl 25
-            .xl 26
-            .xl 27
-            .xl 28
-            .xl 29
-            .xl 30
-            .xl 31
-            .xl 32
+            
+            -each User, i in users
+             ul
+              .xl #{i+1}:#{User.team_name}
+              
         .da1so2
           .da1so2da1
             // this is the daughter one of son two she has 8 sons
-            .zl 1
-            .zl 2
-            .zl 3
-            .zl 4
-            .zl 5
-            .zl 6
-            .zl 7
-            .zl 8
-            .zl 9
-            .zl 10
-            .zl 11
-            .zl 12
-            .zl 13
-            .zl 14
-            .zl 15
-            .zl 16
+            -each User, i in users
+             ul
+              .zl #{i+1}:#{User.team_name}
+            
         .da1so3
           .da1so3da1
             // this is the daughter one of son three she has 4 sons
@@ -372,52 +373,12 @@ head
         .da2so4
           .da2so4da1
             // this is the daughter one of son four she has 16 sons
-            .zr 1
-            .zr 2
-            .zr 3
-            .zr 4
-            .zr 5
-            .zr 6
-            .zr 7
-            .zr 8
-            .zr 9
-            .zr 10
-            .zr 11
-            .zr 12
-            .zr 13
-            .zr 14
-            .zr 15
-            .zr 16
+            -each Level2, i in users
+                .z1 #{i+1}:#{Level2.team_name}
         .da2so5
           .da2so5da1
             // this is the daughter one of son five she has 32 son
             .da2so5da1so1
-              -each User in users
-                .xr #{User.team_name}
-              -each User in users      
-                .xr 2#{User.team_name}
-              -each User in users
-                .xr 3#{User.team_name}
-                .xr 4
-                .xr 7
-                .xr 9
-                .xr 10
-                .xr 11
-                .xr 14
-                .xr 16
-                .xr 17
-                .xr 18
-                .xr 19
-                .xr 20
-                .xr 21
-                .xr 22
-                .xr 23
-                .xr 24
-                .xr 25
-                .xr 26
-                .xr 27
-                .xr 28
-                .xr 29
-                .xr 30
-                .xr 31
-                .xr 32
+              -each level1, i in users
+                .xr #{i+1}:#{level1.team_name}
+                

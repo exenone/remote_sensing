@@ -2,11 +2,11 @@ doctype html
 html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', type='text/css', href='assets/css/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='bootstrap/dist/css/bootstrap.css')
     // Website CSS style
     link(rel='stylesheet', type='text/css', href='css/newadmin.css')
     // Website Font style
-    link(rel='stylesheet', href='vendor/bootstrap/css/font-awesome.min.css')
+    link(rel='stylesheet', href='components-font-awesome/css/font-awesome.min.css')
     // Google Fonts
     link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
@@ -16,10 +16,10 @@ html(lang='en')
       .row.main
         .panel-heading
           .panel-title.text-center
-            h1.title Company Name
+            h1.title Bracket Admin
             hr
         .main-login.main-center
-          form.form-horizontal(method='post', action='/newadminsave')
+          form.form-horizontal(method='POST', action='/newadminsave')
             .form-group
               label.cols-sm-2.control-label(for='name') Your Name
               .cols-sm-10
@@ -56,7 +56,7 @@ html(lang='en')
                     i.fa.fa-lock.fa-lg(aria-hidden='true')
                   input#confirm.form-control(type='password', name='confirm', placeholder='Confirm your Password')
             .form-group
-              button.btn.btn-primary.btn-lg.btn-block.login-button(type='button',formmethod="post" formaction="/newadminsave") Register
+              button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit',formmethod="POST" formaction="/newadminsave") Register
             .login-register
               a(href='/admin') Login
     script(type='text/javascript', src='bootstrap/dist/js/bootstrap.js')

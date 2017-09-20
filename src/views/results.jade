@@ -1,9 +1,12 @@
 
 
 
-each User in users
- 
-   ol#teams
-    li Team #{User.team_name}  has  #{User.Score}: marks
-    
-    
+
+- var x = 32;
+div
+  ol
+  -each User, i in  users
+    - names = [users.team_name];
+    - for (var i=1; i<=x; i++) {
+      li=names[i]
+    - }
